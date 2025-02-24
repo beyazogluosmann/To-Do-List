@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2098/2098402.png" type="image/x-icon">
+
+</head>
+<body>
+    <h1>To-Do List</h1>
+
+<!-- Görev Ekleme Formu -->
+<form id="task-form">
+    <input type="text" id="task-input" placeholder="Yeni görev ekle..." required>
+    <select id="priority-input">
+        <option value="düşük">Düşük</option>
+        <option value="orta" selected>Orta</option>
+        <option value="yüksek">Yüksek</option>
+    </select>
+    <input type="text" id="tag-input" placeholder="Etiketler (örn: iş, acil)" required>
+    <button type="submit">Ekle</button>
+</form>
+
+
+
+<!-- Görev Listesi -->
+<ul id="task-list"></ul>
+
+
+<!-- Görev Arama ve Filtreleme -->
+<div class="filter-container">
+    <input type="text" id="search-input" placeholder="Görevlerde ara...">
+    <select id="filter-priority">
+        <option value="all">Tüm Öncelikler</option>
+        <option value="düşük">Düşük</option>
+        <option value="orta">Orta</option>
+        <option value="yüksek">Yüksek</option>
+    </select>
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>

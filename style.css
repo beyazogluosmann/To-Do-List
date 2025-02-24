@@ -1,0 +1,248 @@
+/* Genel Sayfa Stili */
+body {
+    font-family: 'Poppins', sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f4f4f9;
+    color: #333;
+    text-align: center;
+}
+
+/* Başlık */
+h1 {
+    font-size: 32px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* Görev Ekleme Formu */
+form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+}
+
+input, select, button {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+}
+
+input {
+    flex: 1;
+    max-width: 250px;
+}
+
+button {
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Görev Kartları */
+#task-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#task-list li {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: left;
+    border-left: 6px solid #007bff;
+    transition: all 0.3s ease-in-out;
+}
+
+#task-list li:hover {
+    transform: scale(1.02);
+}
+
+/* Görev İçeriği */
+.task-content {
+    flex-grow: 1;
+    text-align: left;
+}
+
+/* Tamamlama Checkbox */
+.task-completed {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    margin-right: 12px;
+}
+
+.task-completed:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.task-completed:checked::after {
+    content: '✔';
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* Tamamlanan görevler için gri arka plan ve üstü çizili */
+.completed-task {
+    background-color: #e0e0e0 !important;
+    color: gray !important;
+    text-decoration: line-through !important;
+}
+
+
+/* Öncelik Seviyeleri */
+.priority-düşük {
+    color: green;
+    font-weight: bold;
+}
+
+.priority-orta {
+    color: orange;
+    font-weight: bold;
+}
+
+.priority-yüksek {
+    color: red;
+    font-weight: bold;
+}
+
+/* Etiketler */
+.tag-container {
+    margin-top: 6px;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 15px;
+    margin: 2px;
+    font-weight: bold;
+}
+
+/* Eğer etiket yoksa */
+.no-tags {
+    color: gray;
+    font-style: italic;
+}
+
+/* Butonlar */
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.delete-btn {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.update-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #ff1a1a;
+}
+
+.update-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Arama ve Filtreleme */
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#search-input, #filter-priority {
+    padding: 14px 20px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#search-input:hover, #filter-priority:hover,
+#search-input:focus, #filter-priority:focus {
+    border-color: #007bff;
+    background-color: white;
+    box-shadow: 0px 6px 12px rgba(0, 123, 255, 0.15);
+}
+
+/* Güncelleme Formu */
+.edit-form {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 6px;
+    text-align: left;
+}
+
+/* Mobil Duyarlılık */
+@media (max-width: 600px) {
+    form {
+        flex-direction: column;
+    }
+    
+    input, select, button {
+        width: 100%;
+    }
+    
+    .filter-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .task-list li {
+        flex-direction: column;
+        text-align: center;
+    }
+}
